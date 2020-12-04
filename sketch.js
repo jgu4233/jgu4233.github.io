@@ -33,9 +33,10 @@ function draw() {
          data = loadJSON(urlJ, processData);
          data2 = loadJSON(urlQ, processData2);
     }
-	blendMode(BLEND);
+
+	  blendMode(BLEND);
     background(0);
-	blendMode(ADD);
+	  blendMode(ADD);
   let t = frameCount/120;
   for (let i = n; i > 0; i--) {
 		let alpha = pow(1 - noiseProg(i / n), 1/value *250);
@@ -51,7 +52,12 @@ function draw() {
 		
 		fill(0, 0, 255, alpha*255);
     blob(size, width/2, height/2, k, t - i * step + 0.4, noisiness);
-  }  
+  }
+
+  fill(255,80,0);
+  textSize(50);
+  text('I NEED MORE LIGHT', 30, 80);
+
   prevTime = currentTime;
 }
 
