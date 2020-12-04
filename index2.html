@@ -1,63 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photon  connect</title>
-</head>
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
-    <script>
-        let urlJ = "https://api.particle.io/v1/devices/1a002f001847393035313138/pot_value?access_token=ab43326b5e198c725060d07f3c43d4666db7f6c5";
-        let urlQ = "https://api.particle.io/v1/devices/320026000447393035313138/lit_value?access_token=45d88a4718a60a6c4a60fdde00384ab9c32a2344";
-        let data = "";
-        let data2 = "";
-        let currentTime, prevTime;
-        let value = 100;
-        let value2 = 10;
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
 
-        var w = window.innerWidth;
-        var h = window.innerHeight;
+    <meta charset="utf-8" />
 
-        function setup(){
-            createCanvas(1725,940);
-    
-        }
-        function draw(){
-            background(0);
-
-            currentTime = millis() %1000;
-            if(currentTime < prevTime){
-                 data = loadJSON(urlJ, processData);
-                 data2 = loadJSON(urlQ, processData2);
-            }
-            fill(255, 20, 0);
-            if( value < 170 ){
-                circle(width/16, height/10, 20);
-            }
-            else{
-                circle(width/16, height/10, 2);
-            }
-            
-            fill(255,255,255);
-            textSize(value/2);
-            textAlign(CENTER);
-            text('I ADORE LIGHT', w/2, h/3);
-
-            prevTime = currentTime;
-        }
-
-        function processData(data){
-            console.log(data.result);
-            value = map(parseInt(data.result), 0, 4096, 0, 400);
-            console.log(value);
-        }
-        function processData2(data2){
-            console.log(data2.result);
-            value2 = map(parseInt(data2.result), 0, 4096, 0, 400);
-            console.log(value2);
-        }
-    </script>
-
-</body>
+  </head>
+  <body>
+    <script src="sketch.js"></script>
+  </body>
 </html>
