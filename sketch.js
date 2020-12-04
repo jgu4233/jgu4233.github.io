@@ -55,7 +55,7 @@ function draw() {
   }
 
   fill(255,80,0);
-  textSize(50);
+  textSize(24 + value/15);
   text('I NEED MORE LIGHT', 30, 80);
 
   prevTime = currentTime;
