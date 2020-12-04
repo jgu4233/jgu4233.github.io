@@ -32,24 +32,29 @@
                  data2 = loadJSON(urlQ, processData2);
             }
             fill(255, 20, 0);
-            circle(width/16, height/10, value/8);
+            if( value < 170 ){
+                circle(width/16, height/10, 20);
+            }
+            else{
+                circle(width/16, height/10, 2);
+            }
             
             fill(255,255,255);
-            textSize(value/5);
+            textSize(value/2);
             textAlign(CENTER);
-            text('I ADORE LIGHT', w/2, h/4);
+            text('I ADORE LIGHT', w/2, h/3);
 
             prevTime = currentTime;
         }
 
         function processData(data){
             console.log(data.result);
-            value = map(parseInt(data.result), 0, 4096, 0, width);
+            value = map(parseInt(data.result), 0, 4096, 0, 400);
             console.log(value);
         }
         function processData2(data2){
             console.log(data2.result);
-            value2 = map(parseInt(data2.result), 0, 4096, 0, width);
+            value2 = map(parseInt(data2.result), 0, 4096, 0, 400);
             console.log(value2);
         }
     </script>
