@@ -1,4 +1,4 @@
-let urlJ = "https://api.particle.io/v1/devices/1a002f001847393035313138/pot_value?access_token=ab43326b5e198c725060d07f3c43d4666db7f6c5";
+let urlJ = "https://api.particle.io/v1/devices/1a002f001847393035313138/pot_value?access_token=0defc352a5fe136e2fb539bdf1f74f99af8520a9";
 let urlQ = "https://api.particle.io/v1/devices/320026000447393035313138/lit_value?access_token=45d88a4718a60a6c4a60fdde00384ab9c32a2344";
 let data = "";
 let data2 = "";
