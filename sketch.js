@@ -22,7 +22,7 @@ function setup() {
 	angleMode(DEGREES);
   noFill();
 	//noLoop();
-	kMax = random(0.6, 1.0);
+	kMax = random(0.8, 1.0);
 	step = 0.01;
 	noStroke();
 }
@@ -36,20 +36,20 @@ function draw() {
 	blendMode(BLEND);
     background(0);
 	blendMode(ADD);
-  let t = frameCount/150;
+  let t = frameCount/120;
   for (let i = n; i > 0; i--) {
-		let alpha = pow(1 - noiseProg(i / n), value/100);
+		let alpha = pow(1 - noiseProg(i / n), 1/value *250);
 		let size = radius + i * inter;
 		let k = kMax * sqrt(i/n);
 		let noisiness = maxNoise * noiseProg(i / n);
 		
-		fill(255, 0, 0, alpha*250);
+		fill(255, 0, 0, alpha*255);
     blob(size, width/2, height/2, k, t - i * step, noisiness);
 		
-		fill(0, 255, 0, alpha*250);
+		fill(0, 255, 0, alpha*255);
     blob(size, width/2, height/2, k, t - i * step + 0.2, noisiness);
 		
-		fill(0, 0, 255, alpha*250);
+		fill(0, 0, 255, alpha*255);
     blob(size, width/2, height/2, k, t - i * step + 0.4, noisiness);
   }  
   prevTime = currentTime;
@@ -58,7 +58,7 @@ function draw() {
 function blob(size, xCenter, yCenter, k, t, noisiness) {
   beginShape();
 	let angleStep = 360 / 8;
-  for (let theta = 0; theta <= 360 + 2 * angleStep; theta += angleStep) {
+  for (let theta = 0; theta <= 720 + 2 * angleStep; theta += angleStep) {
     let r1, r2;
 		/*
     if (theta < PI / 2) {
@@ -75,8 +75,8 @@ function blob(size, xCenter, yCenter, k, t, noisiness) {
       r2 = cos(theta);
     }
 		*/
-		r1 = cos(theta)+8;
-		r2 = sin(theta)+8;
+		r1 = cos(theta)+4;
+		r2 = sin(theta)+4;
     let r = size + noise(k * r1,  k * r2, t) * noisiness;
     let x = xCenter + r * cos(theta);
     let y = yCenter + r * sin(theta);
