@@ -1,7 +1,7 @@
 body{
     display :flex;
     flex-direction: column;
-    margin-top: 1%;
+    margin-top: 0.5%;
     margin-left: 8%;
     margin-right: 8%;
     font-family: sans-serif;
@@ -21,7 +21,11 @@ h2{
     font-size: 30px;
     font-weight: 700;
 }
-
+h5{
+    font-size: 20px;
+    color: blueviolet;
+    font-weight: 200;
+}
 .description{
     font-size: 15px;
     font-weight: 200;
