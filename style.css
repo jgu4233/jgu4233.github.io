@@ -30,6 +30,12 @@ h2{
     width: 49%;
     padding-top: 1%;
 }
+.pic2{
+    width: 60%;
+    padding-top: 2%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
 .two-list{
     width: 100%;
     display: flex;
