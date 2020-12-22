@@ -17,13 +17,25 @@ h1{
     font-size: 18px;
     font-weight: 700;
 }
-h2 {
+h2{
     font-size: 30px;
     font-weight: 700;
 }
 h2:hover{
     color: brown;
-    font-size: 31px;
+    font-size: 30.5px;
+}
+a:link{
+    color: black;
+    font-size: 30px;
+    font-weight: 700;
+}
+a:visited{
+    color: black;
+}
+a:hover{
+    color: brown;
+    font-size: 30.5px;
 }
 h5{
     font-size: 20px;
